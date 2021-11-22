@@ -7,11 +7,6 @@ import Grid from '@mui/material/Grid';
 import { Typography } from "@mui/material";
 import { Paper } from "@mui/material";
 
-/*
-- mieti mitä kartalle tehdään?
-- jos karttaa käytetään siirretäänkö queryjen teko app.js
-- voiko google mapsia käyttää halutulla tavalla
-*/
 
 function App() {
   return (
