@@ -1,0 +1,21 @@
+.Datagrid{
+  text-align: center;
+  border-radius: 2em;
+}
+
+.Font{
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+}
+
+.Loader{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.Toolbar{
+  background-color:#c5e8c5;
+  color: black;
+}

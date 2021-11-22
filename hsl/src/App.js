@@ -1,0 +1,43 @@
+import './App.css';
+import Main from './components/Main';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Mapview from './components/Mapview'
+import Grid from '@mui/material/Grid';
+import { Typography } from "@mui/material";
+import { Paper } from "@mui/material";
+
+/*
+- mieti mitä kartalle tehdään?
+- jos karttaa käytetään siirretäänkö queryjen teko app.js
+- voiko google mapsia käyttää halutulla tavalla
+*/
+
+function App() {
+  return (
+    <div >
+      <AppBar position="static" >
+                <Toolbar className="Toolbar">
+                    <Typography class="Font">
+                        <b>Grandinkulma bus schedule</b>
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={12} >
+                    <Paper className="Datagrid">
+                    <Main/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} md={12} >
+                    <Paper >
+                        <Mapview />
+                    </Paper>
+                </Grid>
+            </Grid>
+      
+    </div>
+  );
+}
+
+export default App;
