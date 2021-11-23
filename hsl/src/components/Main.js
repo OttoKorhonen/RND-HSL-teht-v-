@@ -43,7 +43,7 @@ export default function Main() {
     if (error) {
         return (
             <div>
-                <Typography className="Font">
+                <Typography class="Font">
                     Oops!!!.... Something went wrong <br />
                     Error: {error.message}
                 </Typography>
@@ -53,7 +53,14 @@ export default function Main() {
 
     if (loading) {
         return (
-            <PacmanLoader color={"orange"} size={50} />
+            <Box class="Loader">
+                <div>
+                    <Typography>
+                        Loading content
+                    </Typography>
+                    <PacmanLoader color={"orange"} size={40} />
+                </div>
+            </Box>
         )
     }
 
@@ -66,15 +73,15 @@ export default function Main() {
             </Typography>
             <div >
                 <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <Table sx={{ minWidth: 650 }} >
                         <TableHead >
                             <TableRow >
                                 <TableCell class="Font">Time table</TableCell>
-                                <TableCell class="Font" align="center">Scheduled arrival</TableCell>
-                                <TableCell class="Font" align="center">Real time arrival</TableCell>
-                                <TableCell class="Font" align="center">Scheduled departure</TableCell>
-                                <TableCell class="Font" align="center">Real time departure</TableCell>
-                                <TableCell class="Font" align="center">Head sign</TableCell>
+                                <TableCell class="Font" >Scheduled arrival</TableCell>
+                                <TableCell class="Font" >Real time arrival</TableCell>
+                                <TableCell class="Font" >Scheduled departure</TableCell>
+                                <TableCell class="Font" >Real time departure</TableCell>
+                                <TableCell class="Font" >Head sign</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody >
@@ -83,14 +90,14 @@ export default function Main() {
                                     key={row.name}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
-                                    <TableCell  component="th" scope="row">
+                                    <TableCell component="th" scope="row">
                                         {row.name}
                                     </TableCell>
-                                    <TableCell class="Font" align="center">{new Date((row.scheduledArrival + row.serviceDay) * 1000).getUTCHours()}:{new Date((row.scheduledArrival + row.serviceDay) * 1000).getUTCMinutes()}</TableCell>
-                                    <TableCell class="Font" align="center">{new Date((row.realtimeArrival + row.serviceDay) * 1000).getUTCHours()}:{new Date((row.realtimeArrival + row.serviceDay) * 1000).getUTCMinutes()}</TableCell>
-                                    <TableCell class="Font" align="center">{new Date((row.scheduledDeparture + row.serviceDay) * 1000).getUTCHours()}:{new Date((row.scheduledDeparture + row.serviceDay) * 1000).getUTCMinutes()}</TableCell>
-                                    <TableCell class="Font" align="center">{new Date((row.realtimeDeparture + row.serviceDay) * 1000).getUTCHours()}:{new Date((row.realtimeDeparture + row.serviceDay) * 1000).getUTCMinutes()}</TableCell>
-                                    <TableCell class="Font" align="center">{row.headsign}</TableCell>
+                                    <TableCell class="Font" >{new Date((row.scheduledArrival + row.serviceDay) * 1000).getHours()}:{new Date((row.scheduledArrival + row.serviceDay) * 1000).getMinutes()}</TableCell>
+                                    <TableCell class="Font" >{new Date((row.realtimeArrival + row.serviceDay) * 1000).getHours()}:{new Date((row.realtimeArrival + row.serviceDay) * 1000).getMinutes()}</TableCell>
+                                    <TableCell class="Font" >{new Date((row.scheduledDeparture + row.serviceDay) * 1000).getHours()}:{new Date((row.scheduledDeparture + row.serviceDay) * 1000).getMinutes()}</TableCell>
+                                    <TableCell class="Font" >{new Date((row.realtimeDeparture + row.serviceDay) * 1000).getHours()}:{new Date((row.realtimeDeparture + row.serviceDay) * 1000).getMinutes()}</TableCell>
+                                    <TableCell class="Font" >{row.headsign}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

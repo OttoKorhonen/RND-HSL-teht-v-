@@ -18,9 +18,9 @@ function App() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Grid container spacing={2}>
+            <Grid container >
                 <Grid item xs={12} md={12} >
-                    <Paper className="Datagrid">
+                    <Paper >
                     <Main/>
                     </Paper>
                 </Grid>
@@ -30,7 +30,6 @@ function App() {
                     </Paper>
                 </Grid>
             </Grid>
-      
     </div>
   );
 }
